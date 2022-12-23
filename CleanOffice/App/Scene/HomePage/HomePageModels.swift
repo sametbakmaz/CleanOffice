@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 // swiftlint:disable nesting
 enum HomePage {
@@ -17,14 +18,22 @@ enum HomePage {
         }
         
         struct Response {
-            
+            var homePageResponse: [HomePageData]
         }
         
-        struct ViewModel {
+        struct ViewModel { //viewControllerda gösterilecek model
             
+            let homePageCellListViewModel: [HomePage.Case.ViewModel.homePageCellModel]
+            
+            struct homePageCellModel {
+                
+                var image: UIImage?
+                var name: String?
+                var statement: String?
+            }
         }
         
     }
-    
+    typealias OfficeDataArray = [HomePageData]
 }
 // swiftlint:enable nesting

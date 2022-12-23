@@ -6,18 +6,29 @@
 //
 
 import Foundation
+import UIKit
 
 protocol LoginRoutingLogic: AnyObject {
-    
+    func routeToHomePage()
 }
 
-protocol LoginDataPassing: class {
+protocol LoginDataPassing: AnyObject {
     var dataStore: LoginDataStore? { get }
 }
 
-final class LoginRouter: LoginRoutingLogic, LoginDataPassing {
+final class LoginRouter: UIViewController, LoginRoutingLogic, LoginDataPassing {
+
+    
+
     
     weak var viewController: LoginViewController?
     var dataStore: LoginDataStore?
     
+    func routeToHomePage(){
+    
+
+    }
+    
 }
+    
+

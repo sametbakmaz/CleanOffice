@@ -7,14 +7,21 @@
 
 import UIKit
 
-protocol LoginDisplayLogic: AnyObject {
-    
+    protocol LoginDisplayLogic: AnyObject {
+    func displayAlert(alertTitle: String, actionTitle: String, message: String)
+    func displayOfficePage(alertTitle: String, actionTitle: String, message: String)
+
 }
 
 final class LoginViewController: UIViewController {
     
     var interactor: LoginBusinessLogic?
     var router: (LoginRoutingLogic & LoginDataPassing)?
+    
+    
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var loginButton: UIButton!
     
     // MARK: Object lifecycle
     
@@ -42,8 +49,21 @@ final class LoginViewController: UIViewController {
         router.viewController = viewController
         router.dataStore = interactor
     }
+    @IBAction func loginClicked(_ sender: Any) {
+        interactor?.loginFirebase(request: .init(email: emailTextField.text!, password: passwordTextField.text!))
+        goToDestinationVC(storyboardName: Constants.homePageStoryboardName, storyboardID: Constants.homePageIdentifier)
+    }
+    
 }
 
 extension LoginViewController: LoginDisplayLogic {
     
+    func displayAlert(alertTitle: String, actionTitle: String, message: String) {
+        getAlert(alertTitle: alertTitle, actionTitle: actionTitle, message: message)
+    }
+    func displayOfficePage(alertTitle: String, actionTitle: String, message: String) {
+        
+        getAlert(alertTitle: alertTitle, actionTitle: actionTitle, message: message)
+
+    }
 }

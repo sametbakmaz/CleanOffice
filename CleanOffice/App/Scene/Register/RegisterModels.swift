@@ -13,11 +13,14 @@ enum Register {
     enum Case {
         
         struct Request {
-            
+            let email : String?
+            var password : String?
         }
         
         struct Response {
-            
+            let alertTitle: String?
+            let alertMessage: String?
+            let actionTitle: String?
         }
         
         struct ViewModel {

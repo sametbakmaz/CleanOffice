@@ -6,18 +6,30 @@
 //
 
 import UIKit
+import SDWebImage
+
 
 class HomePageViewCell: UITableViewCell {
-
+    
+   
+    @IBOutlet weak var titleText: UITextField!
+    @IBOutlet weak var statementText: UITextView!
+    @IBOutlet weak var cellImageView: UIImageView!
+    
+    var cellModel = HomePage.Case.ViewModel.homePageCellModel()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func configureCell(viewModel: HomePage.Case.ViewModel.homePageCellModel) {
+        cellModel = viewModel
+        titleText.text = viewModel.name
+        statementText.text = viewModel.statement
+        cellImageView.image = viewModel.image
+        //cellImageView.sd_setImage(with: URL(string: viewModel.image ?? "Not Found"))
+        
     }
     
 }

@@ -1,26 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nxe-uw-h5I">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nxe-uw-h5I">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Register View Controller-->
         <scene sceneID="D3m-6j-bBI">
             <objects>
-                <viewController id="nxe-uw-h5I" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegisterViewController" id="nxe-uw-h5I" customClass="RegisterViewController" customModule="CleanOffice" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="chM-je-gA4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REGISTER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GSO-bM-LRO">
+                                <rect key="frame" x="88" y="44" width="238" height="127"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="127" id="bdw-HE-l87"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DXb-HN-nA7">
+                                <rect key="frame" x="68" y="179" width="278" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="29N-56-gE2">
+                                <rect key="frame" x="68" y="247" width="278" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UMC-Kk-olh">
+                                <rect key="frame" x="127" y="481" width="161" height="88"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="88" id="khI-jJ-fBo"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="REGISTER"/>
+                                <connections>
+                                    <action selector="registerClicked:" destination="nxe-uw-h5I" eventType="touchUpInside" id="dMJ-gV-lUn"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="acR-sl-ate"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="GSO-bM-LRO" firstAttribute="top" secondItem="acR-sl-ate" secondAttribute="top" id="0jl-V7-5I4"/>
+                            <constraint firstItem="29N-56-gE2" firstAttribute="top" secondItem="DXb-HN-nA7" secondAttribute="bottom" constant="34" id="47b-HS-yay"/>
+                            <constraint firstItem="DXb-HN-nA7" firstAttribute="top" secondItem="GSO-bM-LRO" secondAttribute="bottom" constant="8" id="C51-NC-l74"/>
+                            <constraint firstItem="GSO-bM-LRO" firstAttribute="centerX" secondItem="chM-je-gA4" secondAttribute="centerX" id="Fpp-tk-bKy"/>
+                            <constraint firstItem="29N-56-gE2" firstAttribute="centerX" secondItem="UMC-Kk-olh" secondAttribute="centerX" id="Hel-LQ-QgI"/>
+                            <constraint firstItem="UMC-Kk-olh" firstAttribute="leading" secondItem="acR-sl-ate" secondAttribute="leading" constant="127" id="JrV-ih-NVq"/>
+                            <constraint firstItem="GSO-bM-LRO" firstAttribute="centerX" secondItem="DXb-HN-nA7" secondAttribute="centerX" id="aVF-Lp-qla"/>
+                            <constraint firstItem="DXb-HN-nA7" firstAttribute="leading" secondItem="29N-56-gE2" secondAttribute="leading" id="cq9-cG-6f7"/>
+                            <constraint firstItem="DXb-HN-nA7" firstAttribute="trailing" secondItem="29N-56-gE2" secondAttribute="trailing" id="lSt-pY-DAc"/>
+                            <constraint firstItem="GSO-bM-LRO" firstAttribute="leading" secondItem="acR-sl-ate" secondAttribute="leading" constant="88" id="leF-Z0-L0h"/>
+                            <constraint firstItem="DXb-HN-nA7" firstAttribute="leading" secondItem="acR-sl-ate" secondAttribute="leading" constant="68" id="lml-Ri-i8y"/>
+                            <constraint firstItem="acR-sl-ate" firstAttribute="bottom" secondItem="UMC-Kk-olh" secondAttribute="bottom" constant="293" id="sdL-wy-hsg"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="DXb-HN-nA7" id="TwV-Uj-vr6"/>
+                        <outlet property="passwordTextField" destination="29N-56-gE2" id="50s-mE-CLM"/>
+                        <outlet property="registerButton" destination="UMC-Kk-olh" id="SVx-wx-KGh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cZo-gs-e4f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="107" y="28"/>
+            <point key="canvasLocation" x="105.79710144927537" y="27.455357142857142"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

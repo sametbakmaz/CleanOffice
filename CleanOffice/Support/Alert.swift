@@ -6,3 +6,21 @@
 //
 
 import Foundation
+
+enum Alert {
+    
+    enum Fetch {
+        
+        struct Request {
+            let alertTitle: String?
+            let alertMessage: String?
+            let actionTitle: String?
+        }
+        
+        struct Response {
+            let alertTitle: String?
+            let alertMessage: String?
+            let actionTitle: String?
+        }
+    }
+}
